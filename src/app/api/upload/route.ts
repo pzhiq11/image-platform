@@ -67,6 +67,17 @@ export async function POST(request: NextRequest) {
       });
     });
 
+    // 检查用户是否存在，不存在则创建用户
+    let user = await prisma.user.findUnique({
+      where: { id: userId }
+    });
+
+    if (!user) {
+      user = await prisma.user.create({
+        data: { id: userId }
+      });
+    }
+
     // 保存到数据库
     const image = await prisma.image.create({
       data: {

@@ -11,8 +11,8 @@ export interface Image {
   url: string;
   size: number;
   format: string;
-  compressed: boolean;
   createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface UploadResponse {
