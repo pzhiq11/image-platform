@@ -1,0 +1,42 @@
+{
+  "name": "image-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^5.17.1",
+    "@mui/material": "^5.17.1",
+    "axios": "^1.6.7",
+    "file-saver": "^2.0.5",
+    "next": "15.3.3",
+    "qiniu": "^7.10.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-dropzone": "^14.3.8",
+    "react-image-crop": "^11.0.10",
+    "tinify": "^1.8.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@prisma/client": "^5.22.0",
+    "@types/file-saver": "^2.0.7",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/uuid": "^9.0.8",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "prisma": "^5.22.0",
+    "typescript": "^5"
+  }
+}

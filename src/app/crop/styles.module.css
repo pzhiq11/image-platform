@@ -1,0 +1,260 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.content {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.uploadZone {
+  border: 2px dashed var(--border-light);
+  border-radius: 0.75rem;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--bg-hover);
+}
+
+.uploadZone:hover {
+  border-color: var(--primary);
+  background: var(--bg-hover);
+  transform: translateY(-2px);
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.uploadZone:hover .icon {
+  transform: scale(1.1);
+  color: var(--primary-light);
+}
+
+.text {
+  color: var(--text-secondary);
+}
+
+.text .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.text .subtext {
+  font-size: 1rem;
+}
+
+.cropContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-hover);
+  border-radius: 0.75rem;
+}
+
+.aspectRatios {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.aspectRatios::-webkit-scrollbar {
+  display: none;
+}
+
+.ratioButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0.5rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 60px;
+  text-align: center;
+}
+
+.ratioButton:hover {
+  background: var(--bg-hover);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.ratioButton.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actionButton {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0.5rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.actionButton:hover {
+  background: var(--bg-hover);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.actionButton.primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.actionButton.primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.cropArea {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background: var(--bg-hover);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview {
+  max-width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.previewArea {
+  background: var(--bg-hover);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+}
+
+.previewTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.previewContainer {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--bg-card);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-light);
+}
+
+.previewCanvas {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .aspectRatios {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    justify-content: center;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actionButton {
+    width: 100%;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .cropArea {
+    min-height: 300px;
+  }
+
+  .previewArea {
+    margin-top: 1rem;
+  }
+} 
